@@ -75,6 +75,13 @@ body * {
   transform: translateY(-50%);
 
   z-index: 1;
+  animation: Slide-back 0.2s;
+}
+.light #switch button {
+  animation: Slide-in 0.2s forwards;
+}
+#switch button:hover {
+  outline: 8px solid var(--highlight-color);
 }
 #switch span {
   display: block;
@@ -86,10 +93,7 @@ body * {
   -webkit-backdrop-filter: blur(4px);
   border-radius: 9999px;
 }
-.light #switch button {
-  right: 0;
-  left: initial;
-}
+
 /* liNKS */
 ul {
   list-style: none;
@@ -154,5 +158,22 @@ footer {
   }
   .light {
     --bg-url: url(./assets/bg-desktop-light.jpg);
+  }
+}
+/*animations */
+@keyframes Slide-in {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+@keyframes Slide-back {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0%;
   }
 }
